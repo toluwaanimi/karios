@@ -7,8 +7,11 @@
   </div>
   <div class="t-header-content-wrapper">
     <div class="t-header-content">
-      <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none" (click)="toggleMenu()" >
-        <i class="mdi mdi-menu"  (click)="toggleMenu()"></i>
+<!--      <button class="navbar-toggler" style="background-color: #000DFF" type="button" data-toggle="collapse" (click)="toggleMenu()" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon" (click)="toggleMenu()"></span>-->
+<!--      </button>-->
+      <button style="background-color: #000DFF" class="t-header-toggler t-header-mobile-toggler d-block d-lg-none" (click)="toggleMenu()" >
+        <span class="navbar-toggler-icon" style="background-color: #0e1928" (click)="toggleMenu()"></span>
       </button>
 
       <ul class="nav ml-auto">
@@ -58,7 +61,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" id="messageDropdown" data-toggle="dropdown" aria-expanded="false">
-            Adesina Oluwafemi
+            {{name}}
             <i class="mdi mdi-message-outline mdi-1x"></i>
             <span class="notification-indicator notification-indicator-primary notification-indicator-ripple"></span>
           </a>
@@ -154,25 +157,25 @@
         </a>
       </li>
       <li>
-        <a routerLink="/dashboard/users">
+        <a href="/dashboard/add">
           <span class="link-title">Add Commitment</span>
           <i class="mdi mdi-account link-icon"></i>
         </a>
       </li>
       <li>
-        <a routerLink="/dashboard/sellers">
+        <a routerLink="/reset">
           <span class="link-title">Payment</span>
           <i class="mdi mdi-clipboard-outline link-icon"></i>
         </a>
       </li>
       <li>
-        <a routerLink="/dashboard/products">
+        <a routerLink="/forgotpassword">
           <span class="link-title">Settings</span>
           <i class="mdi mdi-clipboard-outline link-icon"></i>
         </a>
       </li>
       <li>
-        <a routerLink="/dashboard/settings">
+        <a routerLink="/login">
           <span class="link-title">Logout</span>
           <i class="mdi mdi-settings link-icon"></i>
         </a>

@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="row" id="d">
+    <form>
+      <div class="form-group">
+        <h1>Add Stake
+        </h1>
+      </div>
+      <button (click)="showDiv.previous = !showDiv.previous;showDiv.current = false;showDiv.next = false" type="submit" style="margin-right: 10px; background-color: #5867dd"
+              class="btn btn-primary">Add Stake
+      </button>
+      <div class="form-group"  *ngIf="showDiv.previous">
+
+        <label for="exampleInputPassword1">Amount</label>
+        <input type="text" [formControl]="stake" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div  *ngIf="showDiv.previous" class="form-group" style="margin-left: -0.5vh">
+        <div class="col-lg-6">
+          <form class="form-inline">
+            <h5 class="my-1 mr-2" for="inlineFormCustomSelectPref">Organization</h5>
+            <select class="custom-select my-1 mr-sm-2" name="first" [(ngModel)]="selectedOption" id="inlineFormCustomSelectPref">
+              <option *ngFor="let o of options">{{o.name}}</option>
+
+            </select>
+          </form>
+        </div>
+
+      </div>
+
+
+      <button type="submit" style="margin-right: 10px; background-color: #5867dd" routerLink="/dashboard/cheer"
+              class="btn btn-primary">Previous
+      </button>
+      <button   *ngIf="!showDiv.previous" type="submit" style="margin-right: 10px; background-color: #5867dd" routerLink="/dashboard"
+              class="btn btn-primary" (click)="onSubmitted()">Done
+      </button>
+
+      <button type="submit" *ngIf="showDiv.previous"
+              angular-rave
+              [customer_email]="email"
+              [customer_phone]="'23481374748'"
+              [amount]="stake.value"
+              [currency]="'NGN'"
+              [custom_title]="'Stake Payment'"
+              [txref]="'USR1295950'"
+              (callback)="paymentSuccess($event)"
+              (onclose)="paymentFailure()"
+              (init)="paymentInit()" class="btn btn-primary" style="background-color: #5867dd">Pay
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row" id="d">
+    <form (ngSubmit)="nextPage()">
+      <div class="form-group">
+        <h1>Add Cheer Leaders
+        </h1>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Cheer Leader 1</label>
+        <input type="text" [formControl]="one" class="form-control" id="exampleInputPassword1">
+        <label for="exampleInputPassword1" *ngIf="one.invalid">{{getErrorMessage()}}</label>
+
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Cheer Leader 2</label>
+        <input type="text"  [formControl]="two" class="form-control" id="">
+        <label for="exampleInputPassword1" *ngIf="two.invalid">{{getErrorMessageTwo()}}</label>
+
+      </div>
+      <button type="submit" routerLink="/dashboard/referee" style="margin-right: 10px; background-color: #5867dd"  class="btn btn-primary">Previous</button>
+
+      <button type="submit"  class="btn btn-primary" style="background-color: #5867dd">Next</button>
+    </form>
+  </div>
+</div>
